@@ -11,12 +11,11 @@ export default function LayoutDefault({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex max-w-5xl m-auto">
+    <div className="flex flex-col gap-2 max-w-5xl m-auto">
       <Sidebar>
         <Logo />
-        <Link href="/">Welcome</Link>
-        <Link href="/trivia">Trivia</Link>
-        <Link href="/star-wars">Data Fetching</Link>
+        <Link href="/" className="flex items-center" >Welcome</Link>
+        <Link href="/trivia" className="flex items-center">Trivia</Link>
       </Sidebar>
       <Content>{children}</Content>
     </div>
@@ -27,7 +26,7 @@ function Sidebar({ children }: { children: React.ReactNode }) {
   return (
     <div
       id="sidebar"
-      className="p-5 flex flex-col shrink-0 border-r-2 border-r-gray-200"
+      className="px-5 gap-5 flex h-[5rem]"
     >
       {children}
     </div>
@@ -37,7 +36,7 @@ function Sidebar({ children }: { children: React.ReactNode }) {
 function Content({ children }: { children: React.ReactNode }) {
   return (
     <div id="page-container">
-      <div id="page-content" className="p-5 pb-12 min-h-screen">
+      <div id="page-content" className="">
         {children}
       </div>
     </div>
@@ -46,7 +45,7 @@ function Content({ children }: { children: React.ReactNode }) {
 
 function Logo() {
   return (
-    <div className="p-5 mb-2">
+    <div className="flex items-center">
       <a href="/">
         <img src={logoUrl} height={64} width={64} alt="logo" />
       </a>

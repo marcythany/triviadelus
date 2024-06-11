@@ -1,5 +1,4 @@
 import React from "react";
-import { Counter } from "./Counter.js";
 
 export default function Page() {
   return (
@@ -9,7 +8,7 @@ export default function Page() {
       <ul>
         <li>Rendered to HTML.</li>
         <li>
-          Interactive. <Counter />
+          Interactive.
         </li>
       </ul>
     </>
