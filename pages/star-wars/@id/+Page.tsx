@@ -1,10 +1,9 @@
-export { Page }
+import React from "react";
+import { useData } from "vike-react/useData";
+import type { Data } from "./+data.js";
 
-import { useData } from '../../../renderer/useData'
-import type { Data } from './+data'
-
-function Page() {
-  const { movie } = useData<Data>()
+export default function Page() {
+  const movie = useData<Data>();
   return (
     <>
       <h1>{movie.title}</h1>
@@ -14,5 +13,5 @@ function Page() {
       <br />
       Producer: {movie.producer}
     </>
-  )
+  );
 }

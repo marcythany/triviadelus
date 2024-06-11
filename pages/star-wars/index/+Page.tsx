@@ -1,10 +1,9 @@
-export default Page
+import React from "react";
+import { useData } from "vike-react/useData";
+import type { Data } from "./+data.js";
 
-import { useData } from '../../../renderer/useData'
-import type { Data } from './+data'
-
-function Page() {
-  const { movies } = useData<Data>()
+export default function Page() {
+  const movies = useData<Data>();
   return (
     <>
       <h1>Star Wars Movies</h1>
@@ -16,11 +15,8 @@ function Page() {
         ))}
       </ol>
       <p>
-        Source: <a href="https://brillout.github.io/star-wars/">brillout.github.io/star-wars</a>.
-      </p>
-      <p>
-        Data can be fetched by using the <code>data()</code> hook.
+        Source: <a href="https://brillout.github.io/star-wars">brillout.github.io/star-wars</a>.
       </p>
     </>
-  )
+  );
 }
